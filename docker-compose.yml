@@ -1,0 +1,12 @@
+services:
+  neon-towers:
+    build: .
+    container_name: neon-towers
+    ports:
+      - "3003:3003"
+    volumes:
+      - neon-data:/data
+    restart: always
+
+volumes:
+  neon-data:

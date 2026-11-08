@@ -1,0 +1,13 @@
+[Unit]
+Description=NeonTowers game server (socket.io, port 3003)
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/neon-towers/mini-services/game-server
+ExecStart={{BUN}} index.ts
+Restart=always
+RestartSec=3
+Environment=SNAPSHOT_DIR=/opt/neon-towers/db
+
+[Install]
+WantedBy=multi-user.target
